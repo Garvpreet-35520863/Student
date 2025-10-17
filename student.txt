@@ -1,0 +1,10 @@
+course,Noah,Anderson,1011,"ict",3,82,79,88,91,85
+Research,Mia,Thompson,2012,78,82
+Course,Lucas,Martinez,1013,"cs",4,90,87,85,88,92
+Research,Charlotte,Lopez,2014,95,91
+course,Ethan,Wilson,1015,"physics",3,76,80,79,81,77
+Research,Amelia,Lee,2016,84,86
+Course,Alexander,Harris,1017,"chemistry",4,88,90,85,87,89
+research,Harper,Clark,2018,92,88
+Course,Daniel,Young,1019,"engineering",3,70,75,78,72,74
+Course,Daniel,Young,1019,"engineering",3,70,75,78,72,74
