@@ -17,7 +17,7 @@ StudentCourse::StudentCourse(string fn, string ln, long id,
     : Student(fn, ln, id),
       unit(unitId, level, enrolType, m1, m2, m3, m4, mFinal)
 	{
-        Enrolment_Type = unit.getEnrolmentType();
+        setEnrolmentType(unit.getEnrolmentType());
 }
 
 // ReportGrade method
@@ -27,16 +27,17 @@ void StudentCourse::ReportGrade() {
 
     cout << getFirstName() << " " << getLastName()
          << " (ID: " << getStudentID() << ")\n"
-         << "Enrollment Type: " << Enrolment_Type << "\n"
+         << "Enrollment Type: " << getEnrolmentType() << "\n"
          << "Unit ID: " << unit.getUnitId() << "\n"
+		 <<"Unit Level: "<< unit.getUnitLevel() << "\n"
          << "Overall Mark: " << overall << "\n"
          << "Final Grade: " << grade << endl<<endl;
 }
 
 double StudentCourse::GetOverallMark() {
-    return unit.calculateOverallMark();
+    return unit.get_overallmark();
 }
 string StudentCourse::getFinalGrade() {
-    return unit.setFinalGrade();
+    return unit.getFinalGrade();
 }
 

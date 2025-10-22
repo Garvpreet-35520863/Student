@@ -8,27 +8,15 @@ Unit_Research::Unit_Research() {
     proposal_marks = 0.0;
 }
 Unit_Research::Unit_Research(char enrolType , float marks_d , float marks_p) {
-    enrolmentType = enrolType;
-    set_dissertion_marks(marks_d);
-    set_proposal_marks(marks_p);
+    set_enroltype(enrolType);
+    set_dissertion_marks(Unit::check_marks(marks_d));
+    set_proposal_marks(Unit::check_marks(marks_p));
+    set_overallmark(calculateOverallMark());
 }
 double Unit_Research::calculateOverallMark() {
-    overallMark = (dissertion_marks * 0.60) + (proposal_marks * 0.40);
-    return overallMark;
-}
-string Unit_Research::getFinalGrade() {
-    if (overallMark >= 80) {
-        finalGrade = "HD";
-    } else if (overallMark >= 70) {
-        finalGrade = "D";
-    } else if (overallMark >= 60) {
-        finalGrade = "C";
-    } else if (overallMark >= 50) {
-        finalGrade = "P";
-    } else {
-        finalGrade = "N";
-    }
-    return finalGrade;
+    double marks = 0.0;
+    marks = (dissertion_marks * 0.60) + (proposal_marks * 0.40);
+    return marks;
 }
 void Unit_Research::set_dissertion_marks(float marks_d) {
     dissertion_marks = marks_d;

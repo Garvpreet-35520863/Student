@@ -14,11 +14,11 @@ StudentResearch::StudentResearch(string fn, string ln, long id, char enrolType,
                                  float marks_d, float marks_p)
     : Student(fn, ln, id),
       unit(enrolType, marks_d, marks_p) {
-	Enrolment_Type = unit.getEnrolmentType();
+	setEnrolmentType(unit.getEnrolmentType());
 }
 
 double StudentResearch::GetOverallMark() {
-    return unit.calculateOverallMark();
+    return unit.get_overallmark();
 }
 
 string StudentResearch::getFinalGrade() {
@@ -31,7 +31,7 @@ void StudentResearch::ReportGrade() {
 
     cout << getFirstName() << " " << getLastName()
          << " (ID: " << getStudentID() << ")\n"
-         << "Enrollment Type: " << Enrolment_Type << "\n"
+         << "Enrollment Type: " << getEnrolmentType() << "\n"
          << "Overall Mark: " << overall << "\n"
          << "Final Grade: " << grade << endl<<endl;
 }

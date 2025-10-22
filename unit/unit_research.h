@@ -17,7 +17,6 @@ public:
     Unit_Research();
     Unit_Research(char enrolType , float marks_d , float marks_p);
     double calculateOverallMark() override;
-    string getFinalGrade() override;
     void set_dissertion_marks(float marks_d);
     void set_proposal_marks(float marks_p);
 };

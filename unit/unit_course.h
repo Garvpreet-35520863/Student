@@ -20,12 +20,12 @@ public:
     Unit_Course();
     Unit_Course(string id, int level, char enrolType, float m1, float m2, float m3, float m4, float mFinal);
     double calculateOverallMark() override;
-    //Setter For Final Grade
-    string setFinalGrade();
     //Getter for UnitId
     string getUnitId();
     // Getter Unit level
     int getUnitLevel();
+    // check if mark is between 1-100
+    float check_marks(float temp_marks);
     // Setters for marks
     void setMarks1(float m1);
     void setMarks2(float m2);

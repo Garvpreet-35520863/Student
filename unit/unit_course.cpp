@@ -5,7 +5,7 @@ using namespace std;
 
 Unit_Course::Unit_Course() : Unit() {
     unitid = "";
-    unit_level = 0;
+    unit_level = 1;
     marks1 = 0.0;
     marks2 = 0.0;
     marks3 = 0.0;
@@ -15,34 +15,21 @@ Unit_Course::Unit_Course() : Unit() {
 Unit_Course::Unit_Course(string id, int level, char enrolType, float m1, float m2, float m3, float m4, float mFinal) : Unit() {
     unitid = id;
     unit_level = level;
-    enrolmentType = enrolType;
-    setMarks1(m1);
-    setMarks2(m2);
-    setMarks3(m3);
-    setMarks4(m4);
-    setMarksFinal(mFinal);
-    overallMark = calculateOverallMark();
+    set_enroltype(enrolType);
+    setMarks1(Unit::check_marks(m1));
+    setMarks2(Unit::check_marks(m2));
+    setMarks3(Unit::check_marks(m3));
+    setMarks4(Unit::check_marks(m4));
+    setMarksFinal(Unit::check_marks(mFinal));
+    set_overallmark(calculateOverallMark());
 }
 double Unit_Course::calculateOverallMark() {
         // Each assignment = 15% = 0.15 weight
         // Final exam = 40% = 0.40 weight
-        overallMark = (marks1 * 0.15) + (marks2 * 0.15) + (marks3 * 0.15) + (marks4 * 0.15)
+        double marks = 0.0;
+        marks = (marks1 * 0.15) + (marks2 * 0.15) + (marks3 * 0.15) + (marks4 * 0.15)
                       + (marks_final * 0.40);
-    return overallMark;
-}
-string Unit_Course::setFinalGrade() {
-    if (overallMark >= 80) {
-        finalGrade = "HD";
-    } else if (overallMark >= 70) {
-        finalGrade = "D";
-    } else if (overallMark >= 60) {
-        finalGrade = "C";
-    } else if (overallMark >= 50) {
-        finalGrade = "P";
-    } else {
-        finalGrade = "N";
-    }
-    return finalGrade;
+    return marks;
 }
 
 string Unit_Course::getUnitId() {

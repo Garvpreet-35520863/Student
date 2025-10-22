@@ -13,8 +13,7 @@ private:
     string first_name;
     string last_name;
     long studentID;
-
-protected:char Enrolment_Type; // Needs to be changed
+    char Enrolment_Type; // Needs to be changed
 
 public:
     // Constructor

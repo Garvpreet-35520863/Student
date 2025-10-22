@@ -6,7 +6,7 @@
 using namespace std;
 
 class Unit {
-protected:
+private:
     char enrolmentType;        // 'C' or 'R'
     double overallMark;        // calculated overall mark
     string finalGrade;    // final grade
@@ -16,9 +16,20 @@ public:
 
     virtual double calculateOverallMark();
 
-    virtual string getFinalGrade();
+    void set_enroltype(char etype);
+
+    void set_overallmark(double Omark);
+
+    void set_FinalGrade(string fgrade);
+
+    double get_overallmark();
+
+    string getFinalGrade();
 
     char getEnrolmentType();
+
+    // check if mark is between 1-100
+    float check_marks(float temp_marks);
 
     virtual ~Unit() {}
 };
